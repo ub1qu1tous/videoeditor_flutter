@@ -24,6 +24,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Pimosa',
       theme: ThemeData(
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor: Colors.blue,
+          selectionColor: Colors.blue,
+          selectionHandleColor: Colors.blue,
+        ),
         colorScheme: ColorScheme(
           brightness: Brightness.light,
           primary: Colors.black,
@@ -31,14 +36,14 @@ class _MyAppState extends State<MyApp> {
           secondary: Colors.blue,
           onSecondary: Colors.white,
           surface: Colors.white,
-          onSurface: Colors.grey.shade900,
+          onSurface: Colors.black,
           error: Colors.red,
           onError: Colors.white,
         ),
         // useMaterial3: true,
       ),
       darkTheme: ThemeData(
-        colorScheme: const ColorScheme(
+        colorScheme: ColorScheme(
           brightness: Brightness.dark,
           primary: Colors.grey,
           onPrimary: Colors.white,

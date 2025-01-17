@@ -60,14 +60,16 @@ class ActivationPage extends StatelessWidget {
                   child: TextField(
                     controller: _controller,
                     style: TextStyle(
-                        color: hintColor), // Text color for dark background
+                        color: Colors.black,
+
+                    ), // Text color for dark background
                     decoration: InputDecoration(
                       prefixIcon: Padding(
                         padding: EdgeInsets.only(left: 15, right: 19),
-                        child: Icon(Icons.key, color: hintColor),
+                        child: Icon(Icons.key, color: Colors.black),
                       ),
                       suffixIcon: IconButton(
-                        icon: Icon(Icons.content_paste, color: hintColor),
+                        icon: Icon(Icons.content_paste, color: Colors.black),
                         onPressed: getClipboardText,
                         tooltip: 'Paste the license key from clipboard',
                       ),
