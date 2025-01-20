@@ -35,11 +35,11 @@ class ActivationPage extends StatelessWidget {
     return Scaffold(
       // backgroundColor: Colors.grey.shade900,
       body: Padding(
-        padding: EdgeInsets.all(30),
+        padding: EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 40),
+            SizedBox(height: 20),
             Text(
               'License',
               style: TextStyle(
@@ -88,7 +88,7 @@ class ActivationPage extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               TextButton(
                 style: ButtonStyle(
                   foregroundColor: WidgetStateProperty.all<Color>(
@@ -105,6 +105,7 @@ class ActivationPage extends StatelessWidget {
                 },
                 child: Text('Buy license'),
               ),
+              SizedBox(width: 15),
               TextButton(
                 style: ButtonStyle(
                   foregroundColor: WidgetStateProperty.all<Color>(

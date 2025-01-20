@@ -27,7 +27,7 @@ class AboutPage extends StatelessWidget {
       padding: const EdgeInsets.all(20),
         children: [
       Column(children: [
-        Padding(padding: const EdgeInsets.all(20)),
+        Padding(padding: const EdgeInsets.only(bottom: 20)),
         Row(
           children: [
             Padding(padding: const EdgeInsets.only(left: 10)),

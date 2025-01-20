@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'about.dart';
-import 'license_page.dart';
+import 'homepage.dart';
+import 'alltools.dart';
 import 'settings.dart';
+import 'license_page.dart';
+import 'about.dart';
+import 'outputspage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,7 +60,7 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
       ),
       themeMode: _themeMode,
-      home: MyHomePage(),
+      home: AppScreen(),
     );
   }
 
@@ -68,14 +71,14 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class AppScreen extends StatefulWidget {
+  const AppScreen({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<AppScreen> createState() => _AppScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _AppScreenState extends State<AppScreen> {
   var selectedIndex = 0;
 
   @override
@@ -85,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
       case 0:
         page = HomePage();
       case 1:
-        page = HomePage();
+        page = ServiceGridPage();
       case 2:
         page = SettingsPage();
       case 3:
@@ -93,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
       case 4:
         page = AboutPage();
       case 5:
-        page = HomePage();
+        page = OutputsPage();
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
@@ -179,35 +182,3 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-        title: Column(children: [
-      Padding(
-        padding: const EdgeInsets.all(20),
-      ),
-      Text(
-        'Your all in one media toolkit',
-        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-      ),
-      Padding(
-        padding: const EdgeInsets.all(20),
-      )
-    ]));
-  }
-}
-
-class MyFavorites extends StatelessWidget {
-  const MyFavorites({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(children: [
-      Padding(
-          padding: const EdgeInsets.all(20), child: Text('You have favorites')),
-    ]);
-  }
-}
