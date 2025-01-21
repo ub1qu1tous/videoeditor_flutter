@@ -68,7 +68,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         }
                       });
                     },
-                    activeColor: Colors.white,
+                    activeColor: Colors.grey,
                     inactiveThumbColor: Colors.black)
               ]),
             ]),

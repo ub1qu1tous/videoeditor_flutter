@@ -34,7 +34,7 @@ class ServiceGridPage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        const SizedBox(height: 20.0), // Space between title and grid
+        SizedBox(height: 20.0), // Space between title and grid
         GridView.builder(
           shrinkWrap: true, // Allows GridView to size itself inside ListView
           physics: NeverScrollableScrollPhysics(), // Prevents nested scrolling
@@ -47,14 +47,15 @@ class ServiceGridPage extends StatelessWidget {
           itemCount: service.features.length,
           itemBuilder: (context, index) {
             final feature = service.features[index];
-            bool isHovered = false; // Local hover state
+            bool isHovered = false;
+            Color titleColor = Theme.of(context).colorScheme.surface == Colors.white ? Colors.black : Colors.white;
 
             return StatefulBuilder(
               builder: (context, setState) {
                 return MouseRegion(
                   onEnter: (_) => setState(() => isHovered = true),
                   onExit: (_) => setState(() => isHovered = false),
-                  child: GestureDetector(
+                  child: InkWell(
                     onTap: () {
                         // Navigate to the respective tool's page
                         Navigator.push(
@@ -66,7 +67,7 @@ class ServiceGridPage extends StatelessWidget {
                         );
                       },
                     child: Container(
-                      padding: const EdgeInsets.only(
+                      padding: EdgeInsets.only(
                           top: 5.0, bottom: 5.0, left: 20.0, right: 20.0),
                       decoration: BoxDecoration(
                         color: isHovered
@@ -81,18 +82,18 @@ class ServiceGridPage extends StatelessWidget {
                         children: [
                           Icon(
                             feature.icon,
-                            size: 35.0,
+                            size: 30.0,
                             color: isHovered
                                 ? Colors.white
-                                : Colors.black.withOpacity(0.25), // Change icon color
+                                : Colors.grey
                           ),
-                          const SizedBox(height: 8.0),
+                          SizedBox(height: 8.0),
                           Text(
                             feature.name,
                             style: TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
-                              color: isHovered ? Colors.white : Colors.black,
+                              color: isHovered ? Colors.white : titleColor,
                             ),
                             textAlign: TextAlign.start,
                           ),

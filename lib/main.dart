@@ -112,9 +112,10 @@ class _AppScreenState extends State<AppScreen> {
           children: [
             SafeArea(
               child: NavigationRail(
+                minExtendedWidth: 225,
                 backgroundColor: backgroundColor,
-                extended: constraints.maxWidth >= 600,
-                leading: const Padding(
+                extended: constraints.maxWidth >= 800,
+                leading: Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
                     'Pimosa',
@@ -159,15 +160,6 @@ class _AppScreenState extends State<AppScreen> {
                     selectedIndex = value;
                   });
                 },
-                // trailing: TextButton.icon(
-                //   onPressed: () {
-                //     setState(() {
-                //       selectedIndex = selectedIndex;
-                //     });
-                //   },
-                //   icon: Icon(Icons.science_outlined),
-                //   label: Text('Outputs'),
-                // )
               ),
             ),
             Expanded(
