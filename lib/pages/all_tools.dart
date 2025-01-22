@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'services.dart';
-import 'main.dart';
+import '../services.dart';
+import '../screens/main_app.dart';
 
 class ServiceGridPage extends StatelessWidget {
   const ServiceGridPage({super.key});
@@ -9,7 +9,7 @@ class ServiceGridPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20.0),
         children: [
           SizedBox(height: 20.0),
           _buildServiceSection('Video Tools', videoService),
